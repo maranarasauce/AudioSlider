@@ -66,7 +66,7 @@ namespace AudioSlider
         {
             //The volume slider is set out of 100, so it's converted to 1 and then stored, and the volume is applied.
             float volume = stuff / 100f;
-            MonoSingleton<PrefsManager>.Instance.SetFloat("allVolume", stuff);
+            MonoSingleton<PrefsManager>.Instance.SetFloat("allVolume", volume);
             goreMixer.audioMixer.SetFloat("allVolume", (double)volume > 0.0 ? Mathf.Log10(volume) * 20f : -80f);
             return false;
         }
